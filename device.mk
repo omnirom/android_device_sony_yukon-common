@@ -12,12 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-SONY_ROOT:=device/sony/yukon/rootdir
-
 SOMC_PLATFORM := yukon
 
 DEVICE_PACKAGE_OVERLAYS += \
-    device/sony/yukon/overlay
+    device/sony/yukon-common/overlay
+
+SONY_ROOT:=device/sony/yukon-common/rootdir
 
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/ueventd.yukon.rc:root/ueventd.yukon.rc \

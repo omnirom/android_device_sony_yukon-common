@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_VENDOR_KERNEL_HEADERS := device/sony/yukon/kernel-headers
+PRODUCT_VENDOR_KERNEL_HEADERS := device/sony/yukon-common/kernel-headers
 
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
@@ -32,7 +32,7 @@ BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET     := 0x02000000
 
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_CUSTOM_BOOTIMG_MK := device/sony/yukon/boot/custombootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/sony/yukon-common/boot/custombootimg.mk
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 
 BOARD_KERNEL_CMDLINE := androidboot.hardware=yukon androidboot.selinux=permissive
@@ -89,7 +89,7 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # BT definitions for Qualcomm solution
 BLUETOOTH_HCI_USE_MCT := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/yukon/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/yukon-common/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 
@@ -101,7 +101,7 @@ TARGET_NO_RPC := true
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
-TARGET_SYSTEM_PROP := device/sony/yukon/system.prop
+TARGET_SYSTEM_PROP := device/sony/yukon-common/system.prop
 
 # NFC
 NFC_NXP_CHIP_TYPE := PN547C2
@@ -121,6 +121,6 @@ BUILD_KERNEL := true
 -include vendor/qcom/proprietary/common/build/proprietary-build.mk
 
 # SELinux
-include device/qcom/sepolicy/sepolicy.mk
+include device/qcom/aosp-sepolicy/sepolicy.mk
 
-BOARD_SEPOLICY_DIRS += device/sony/yukon/sepolicy
+BOARD_SEPOLICY_DIRS += device/sony/yukon-common/sepolicy
