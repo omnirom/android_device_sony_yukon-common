@@ -20,6 +20,9 @@ BOARD_HAS_VIDC_INSTANCE_PRIORITY := false
 # Don't use DSPManager
 TARGET_NO_DSPMANAGER := true
 
+# Proprietary files
+SONY_AOSP ?= true
+
 # TWRP
 BOARD_HAS_NO_SELECT_BUTTON := true
 
