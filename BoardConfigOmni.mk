@@ -12,8 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Kernel
+BOARD_CUSTOM_BOOTIMG := true
+BOARD_CUSTOM_BOOTIMG_MK := device/sony/yukon-common/boot/custombootimg.mk
+BOARD_KERNEL_SEPARATED_DT := true
+TARGET_DTB_EXTRA_FLAGS := --force-v2
+
 #GPU
-BOARD_HAS_VENUS_UBWC := false
 BOARD_HAS_VIDC_OPERATING_RATE := false
 BOARD_HAS_VIDC_INSTANCE_PRIORITY := false
 
