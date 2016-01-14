@@ -22,8 +22,8 @@ TARGET_DTB_EXTRA_FLAGS := --force-v2
 BOARD_HAS_VIDC_OPERATING_RATE := false
 BOARD_HAS_VIDC_INSTANCE_PRIORITY := false
 
-# Don't use DSPManager
-TARGET_NO_DSPMANAGER := true
+# Use device's audio_effects.conf
+TARGET_USE_DEVICE_AUDIO_EFFECTS_CONF := true
 
 # Proprietary files
 SONY_AOSP ?= true
