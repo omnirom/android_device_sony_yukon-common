@@ -24,6 +24,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     keycheck
 
+# WCNSS service
+PRODUCT_PACKAGES += \
+    wcnss_service
+
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnGSMDevice=1
