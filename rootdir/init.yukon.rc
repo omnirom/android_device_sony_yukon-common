@@ -25,12 +25,6 @@ on early-init
     mkdir /persist 0771 system system
 
 on init
-    # Support legacy libs
-    symlink /system/vendor/lib/egl /egl
-
-    # BoringSSL hacks
-    export LD_PRELOAD "libboringssl-compat.so"
-
     mkdir /dev/bus 0755 root root
     mkdir /dev/bus/usb 0755 root root
 
@@ -107,10 +101,6 @@ on early-boot
     setrlimit 8 67108864 67108864
 
 on boot
-    # Read ahead buffer
-    write /sys/block/mmcblk0/queue/read_ahead_kb 512
-    write /sys/block/mmcblk1/queue/read_ahead_kb 512
-
     # Enable writing to led blink node from userspace
     chown system system /sys/class/leds/red/blink
     chown system system /sys/class/leds/green/blink
@@ -374,7 +364,7 @@ service iprenew_bt-pan /system/bin/dhcpcd -n
     oneshot
 
 # BT service
-service hciattach /system/bin/sh /system/etc/init.yukon.bt.sh
+service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
     class late_start
     user bluetooth
     group bluetooth system
