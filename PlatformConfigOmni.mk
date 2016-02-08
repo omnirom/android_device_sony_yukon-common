@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+include device/sony/yukon-common/PlatformConfig.mk
+
 # NFC
 BOARD_NFC_HAL_SUFFIX := msm8226
 

@@ -12,21 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+$(call inherit-product, device/sony/common/common_omni.mk)
+
 SOMC_PLATFORM := yukon
 
-SONY_ROOT:=device/sony/yukon-common/rootdir
-
-# Init
-PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/init.recovery.yukon.rc:root/init.recovery.yukon.rc \
-    $(SONY_ROOT)/init.yukon.rc:root/init.yukon.rc \
-    $(SONY_ROOT)/init.yukon.usb.rc:root/init.yukon.usb.rc \
-    $(SONY_ROOT)/init.yukon.pwr.rc:root/init.yukon.pwr.rc \
-    $(SONY_ROOT)/ueventd.yukon.rc:root/ueventd.yukon.rc
+SONY_ROOT:= device/sony/yukon/rootdir
 
 # Media
 PRODUCT_COPY_FILES += \
-    $(SONY_ROOT)/system/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     $(SONY_ROOT)/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
     $(SONY_ROOT)/system/etc/media_codecs.xml:system/etc/media_codecs.xml \
     $(SONY_ROOT)/system/etc/media_profiles.xml:system/etc/media_profiles.xml
@@ -47,6 +40,10 @@ PRODUCT_COPY_FILES += \
 # Device Specific Hardware
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml
+
+# Platform Init
+PRODUCT_PACKAGES += \
+    init.yukon.pwr
 
 # NFC packages
 PRODUCT_PACKAGES += \
