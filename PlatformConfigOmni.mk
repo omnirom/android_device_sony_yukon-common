@@ -14,9 +14,6 @@
 
 include device/sony/yukon-common/PlatformConfig.mk
 
-# NFC
-BOARD_NFC_HAL_SUFFIX := msm8226
-
 # Use device's audio_effects.conf
 TARGET_USE_DEVICE_AUDIO_EFFECTS_CONF := true
 
