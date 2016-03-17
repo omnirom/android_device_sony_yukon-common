@@ -14,6 +14,8 @@
 
 include device/sony/yukon-common/PlatformConfig.mk
 
+TARGET_INIT_VENDOR_LIB := libinit_msm
+
 # Use device's audio_effects.conf
 TARGET_USE_DEVICE_AUDIO_EFFECTS_CONF := true
 
