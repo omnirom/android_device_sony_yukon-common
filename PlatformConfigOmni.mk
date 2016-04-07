@@ -14,6 +14,10 @@
 
 include device/sony/yukon-common/PlatformConfig.mk
 
+ifeq ($(filter-out yukon,$(SOMC_PLATFORM),))
+BOARD_CUSTOM_BOOTIMG_MK := device/sony/yukon-common/boot/custombootimg.mk
+endif
+
 # Use device's audio_effects.conf
 TARGET_USE_DEVICE_AUDIO_EFFECTS_CONF := true
 
