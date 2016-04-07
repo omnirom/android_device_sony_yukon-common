@@ -14,6 +14,9 @@
 
 include device/sony/yukon-common/PlatformConfig.mk
 
+BOARD_CUSTOM_BOOTIMG_MK := device/sony/yukon-common/boot/custombootimg.mk
+TARGET_DTB_EXTRA_FLAGS := --force-v2
+
 # Use device's audio_effects.conf
 TARGET_USE_DEVICE_AUDIO_EFFECTS_CONF := true
 
